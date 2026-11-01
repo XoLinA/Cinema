@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Favorite Movies</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            padding: 30px;
+            font-family: Arial, sans-serif;
+            background-color: #fff0f5;
+            color: #ffcc00;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #e75480;
+        }
+
+        .movies-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .movie-card {
+            background-color: #ff69b4;
+            padding: 25px;
+            border-radius: 15px;
+            border: 2px solid #ff1493;
+            transition: 0.3s;
+        }
+
+        .movie-card:hover {
+            transform: translateY(-7px);
+            background-color: #ff85c1;
+        }
+
+        .movie-number {
+            color: #ffeb3b;
+            font-size: 14px;
+        }
+
+        .movie-card h2 {
+            color: #ffeb3b;
+            font-size: 20px;
+            margin: 15px 0;
+        }
+
+        .movie-card p {
+            color: #fff200;
+            font-size: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>My Favorite Movies</h1>
+
+    <div class="movies-container" id="movies"></div>
+
+    <script>
+        let movies = [
+            {number: 1, movieName: "Avatar", year: 2009, rating: 7.9},
+            {number: 2, movieName: "Titanic", year: 1997, rating: 7.9},
+            {number: 3, movieName: "Inception", year: 2010, rating: 8.8},
+            {number: 4, movieName: "Interstellar", year: 2014, rating: 8.7},
+            {number: 5, movieName: "The Matrix", year: 1999, rating: 8.7},
+            {number: 6, movieName: "Joker", year: 2019, rating: 8.3},
+            {number: 7, movieName: "Gladiator", year: 2000, rating: 8.5},
+            {number: 8, movieName: "The Batman", year: 2022, rating: 7.8},
+            {number: 9, movieName: "Dune", year: 2021, rating: 8.0},
+            {number: 10, movieName: "The Lion King", year: 1994, rating: 8.5},
+            {number: 11, movieName: "Forrest Gump", year: 1994, rating: 8.8},
+            {number: 12, movieName: "Fight Club", year: 1999, rating: 8.8},
+            {number: 13, movieName: "The Green Mile", year: 1999, rating: 8.6},
+            {number: 14, movieName: "Pulp Fiction", year: 1994, rating: 8.9},
+            {number: 15, movieName: "The Godfather", year: 1972, rating: 9.2},
+            {number: 16, movieName: "Shrek", year: 2001, rating: 7.9},
+            {number: 17, movieName: "Coco", year: 2017, rating: 8.4},
+            {number: 18, movieName: "Up", year: 2009, rating: 8.3},
+            {number: 19, movieName: "WALL-E", year: 2008, rating: 8.4},
+            {number: 20, movieName: "Parasite", year: 2019, rating: 8.5}
+        ];
+        let moviesContainer = document.getElementById("movies");
+        let html = "";
+        for (let i = 0; i < movies.length; i++) {
+            html += `
+                <div class="movie-card">
+                    <span class="movie-number">#${movies[i].number}</span>
+                    <h2>${movies[i].movieName}</h2>
+                    <p>Year: ${movies[i].year}</p>
+                    <p>Rating: ✮ ${movies[i].rating}</p>
+                </div>
+            `;
+        }
+
+        moviesContainer.innerHTML = html;
+    </script>
+
+</body>
+
+</html>
